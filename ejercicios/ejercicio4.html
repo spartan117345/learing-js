@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio4</title>
+    <script>
+        function cambiarImagen() {
+            var imagen = document.getElementById("nombreimagen").value;
+            document.getElementById("imagen").src = imagen;
+        }
+    </script>
+    
+</head>
+<body>
+
+    <select name="imagen" id="nombreimagen" onchange="cambiarEstilo()">
+        <option value="img/escudoGuanenta.png">escudo del colegio</option>
+        <option value="img/logoSistemas.jpg">logo de sistemas</option>
+        </select>
+    <button onclick="cambiarImagen()">
+        Cambiar Imagen
+    </button>
+    <img id= "imagen"src="img/escudoGuanenta.png" alt=""onclick="cambiarImagen()">
+</body>
+</html>

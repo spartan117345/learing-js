@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ejercicio5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        .controles {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        #texto-objetivo {
+            font-size: 24px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            max-width: 600px;
+            transition: font-weight 0.2s, font-style 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Configura el formato del texto:</h2>
+
+    <div class="controles">
+        <label>
+            Negrita
+            <select id="select-negrita">
+                <option value="normal">No (Normal)</option>
+                <option value="bold">Sí (Negrita)</option>
+            </select>
+        </label>
+
+        <label>
+            Cursiva
+            <select id="select-cursiva">
+                <option value="normal">No (Normal)</option>
+                <option value="italic">Sí (Cursiva)</option>
+            </select>
+        </label>
+    </div>
+
+    <div id="texto-objetivo">
+        texto de prueba...
+    </div>
+
+    <script>
+        const selectNegrita = document.getElementById("select-negrita");
+        const selectCursiva = document.getElementById("select-cursiva");
+        const texto = document.getElementById("texto-objetivo");
+
+        function actualizarEstilos() {
+            texto.style.fontWeight = selectNegrita.value;
+            
+            texto.style.fontStyle = selectCursiva.value;
+        }
+
+        selectNegrita.addEventListener("change", actualizarEstilos);
+        selectCursiva.addEventListener("change", actualizarEstilos);
+    </script>
+
+</body>
+</html>

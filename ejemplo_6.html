@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cambio de estilo</title>
+    <script>
+        function cambiarEstilo() {
+            tamanio = document.getElementById("idrango").value;
+            color = document.getElementById("idcolor").value;
+            document.getElementById("idnumero").style.fontSize = tamanio;
+            tecto = document.getElementById("idtexto");
+            tecto.style.fontSize = tamanio + "px";
+            tecto.style.color = color;
+        }
+    </script>
 </head>
 <body>
-    
+    <div id="idtexto">texto de prueba...</div>
+    <input type="range" id="idrango" min="8" max="50" value="12" oninput="cambiarEstilo()">
+    <span id="idnumero">12</span>
+    <select name="color" id="idcolor" onchange="cambiarEstilo()">
+        <option value="black">Negro</option>
+        <option value="red">Rojo</option>
+        <option value="blue">Azul</option>
+        <option value="green">Verde</option>
+    </select>
 </body>
 </html>
